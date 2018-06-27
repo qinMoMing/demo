@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹层</title>
+	<style type="text/css">
+		#but{
+			width: 100px;
+			background: #ccc;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			cursor: pointer;
+		}
+		.wawu{
+			display: block;
+			width: 600px;
+			background: #ddd;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transform: translate(-50%,-50%);
+			transition: all 0.5s;
+		}
+		.wawu h1{
+			font-size: 18px;
+		}
+		.wawu a{
+			text-decoration: none;
+			float: right;
+			color: #000
+		}
+		.content{
+			padding: 150px;
+			text-align: center;
+			background: #aaa;
+		}
+	</style>
+</head>
+<body>
+	<div id="but">
+		点击弹层
+	</div>
+	<div class="wawu">
+		<h1>莫冥
+			<a href="JavaScript:;" class="cl">close</a>
+		</h1>
+		<div class="content">
+			wawa!I am falling in love !
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		let but = document.getElementById("but");
+		let wawu = document.getElementsByClassName("wawu");
+		let cl = document.getElementsByClassName("cl");
+		console.log(wawu);
+		but.onclick = function(){
+			wawu[0].style.opacity = 1;
+			wawu[0].style.width = "600px";
+			wawu[0].style.top = "50%";
+			wawu[0].style.left = "50%";
+		}
+		cl[0].onclick = function(){
+			wawu[0].style.opacity = 0;
+			wawu[0].style.top = "0";
+			wawu[0].style.left = "0";
+		}
+	}
+</script>
+</html>
